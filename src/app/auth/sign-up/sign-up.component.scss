@@ -1,0 +1,46 @@
+form {
+  text-align: center;
+  font-family: lobmHeaderFont;
+  font-size: 20px;
+}
+
+input {
+  background: transparent;
+  color: #ecc572;
+  border: 0;
+  border-bottom: 1px solid #ecc572;
+  caret-color: #ecc572;
+}
+
+input:focus {
+  background: transparent;
+  outline: none;
+  color: #ecc572;
+}
+
+.form-control:focus {
+  border-bottom: #ecc572 solid 1px;
+}
+
+.form-group {
+  margin-bottom: 80px;
+}
+
+button  {
+  background: #272727;
+  border: 3px solid;
+  border-image: linear-gradient(to bottom, #ecc572, #463B22) 1 1%;
+  font-size: 25px;
+  text-shadow: 4px 4px 3px black;
+  transition: all 0.1s ease-in;
+}
+button:hover {
+  box-shadow: 0px 0px 10px #ecc572 !important;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 80px;
+  font-size: 50px;
+  white-space: nowrap;
+}

@@ -1,0 +1,90 @@
+h1 {
+  font-size: 3.8vw;
+  font-family: lobmHeaderFont;
+  text-shadow: 6px 6px 2px black;
+  color: ghostwhite;
+  position: relative;
+  top: 10vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+button {
+  font-family: lobmHeroFont;
+  color: white;
+  position: absolute;
+  top: 35vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 7.5vw;
+  width: 27vw;
+  font-size: 4.1vw;
+  line-height: 0;
+  border-radius: 4px 85px;
+  text-shadow: 3px 3px 2px black;
+  border: 1px solid rgba(255,255,255, 0.25) ;
+  background-color: transparent;
+  transition: all 0.2s ease-in;
+}
+
+button:hover {
+  border-color: rgba(255,0,0,0.40);
+  color: white;
+}
+
+button:focus {
+  outline: 0 !important;
+}
+
+button:active {
+  outline: 0 !important;
+}
+
+#star{
+  animation: Star 1s infinite;
+}
+@keyframes Star{
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.brk-btn {
+  border: 0.2em solid rgba(98,0,0,0.80);
+  border-radius: 25px 98px;
+  padding: 0.5em 1em;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: black;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: black;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
+  }
+}

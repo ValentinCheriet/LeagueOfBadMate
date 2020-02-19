@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/fonts/scss/modules/_fonts.scss';
+
+
+main {
+  text-align: center;
+  position: relative;
+}
+* {
+  color: white;
+}
+.hero {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: center url("assets/img/hero.png");
+  background-size: auto;
+  background-position: 44% 25%;
+  filter: blur(6px) brightness(40%);
+}
+
+.center-page {
+  position: relative;
+  top: 50vh;
+  transform: translate(0%, -30vh);
+}
+
+body {
+  background: rgb(14,14,14);
+}
