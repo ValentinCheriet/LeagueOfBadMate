@@ -1,12 +1,12 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li *ngIf="!this.authService.isAuth"><a routerLink="auth/signup">Inscription</a></li>
-      <li *ngIf="this.authService.isAuth"><a routerLink="auth/signup">Mon Profil</a></li>
+      <li *ngIf="!this.isAuth"><a routerLink="auth/signup">Inscription</a></li>
+      <li *ngIf="this.isAuth"><a routerLink="myProfile">Mon Profil</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li *ngIf="!this.authService.isAuth"><a routerLink="auth/signin">Connexion</a></li>
-      <li *ngIf="this.authService.isAuth"><a routerLink="auth/signin" (click)="onLogOut()">Déconnexion</a></li>
+      <li *ngIf="!this.isAuth"><a routerLink="auth/signin">Connexion</a></li>
+      <li *ngIf="this.isAuth"><a routerLink="auth/signin" (click)="onLogOut()">Déconnexion</a></li>
     </ul>
   </div>
 </nav>

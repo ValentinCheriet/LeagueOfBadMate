@@ -14,14 +14,19 @@ import {RouterModule, Routes} from '@angular/router';
 import {AuthService} from './services/auth.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AuthGuardService} from './services/authGuard.service';
+import { DeniedAccessComponent } from './denied-access/denied-access.component';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: ViewComponent},
   {path: 'auth/signin', component: SignInComponent, data: { animation: 'isRight' }},
   {path: 'auth/signup', component: SignUpComponent, data: { animation: 'isLeft' }},
-  {path: 'myProfile', component: MyProfileComponent},
+  {path: 'deniedAccess', component: DeniedAccessComponent},
+  {path: 'fourOhFour', component: FourOhFourComponent},
+  {path: 'myProfile', canActivate: [AuthGuardService], component: MyProfileComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: '**', redirectTo: 'home'}
+  {path: '**', redirectTo: 'fourOhFour'}
 ];
 
 
@@ -35,7 +40,9 @@ const appRoutes: Routes = [
     SignUpComponent,
     MyProfileComponent,
     FirstTimeComponent,
-    FindPlayersComponent
+    FindPlayersComponent,
+    DeniedAccessComponent,
+    FourOhFourComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AppRoutingModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
