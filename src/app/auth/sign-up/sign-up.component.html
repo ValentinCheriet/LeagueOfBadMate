@@ -1,18 +1,20 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12 border-form">
-      <form action="">
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
         <h1>Crée ton Profil !</h1>
         <div class="form-group">
-          <label for="">Identifiant</label>
-          <input type="text" class="form-control">
+          <label for="email">Identifiant</label>
+          <input type="text" class="form-control" id="email" formControlName="email" autocomplete="off">
         </div>
 
         <div class="form-group">
-          <label for="">Mot de Passe</label>
-          <input type="password" class="form-control">
+          <label for="password">Mot de Passe</label>
+          <input type="password" class="form-control" placeholder="6 caractères minim." id="password" formControlName="password">
         </div>
-        <button class="brk-btn shadow-none">Commencer</button>
+        <p *ngIf="errorMsg != ''" class="text-danger">{{this.errorMsg}}</p>
+        <p *ngIf="successMsg != ''" style="color: #ecc572;">{{this.successMsg}}</p>
+        <button class="brk-btn shadow-none" type="submit" [ngClass]="{'buttonHold': signUpForm.invalid}" [disabled]="signUpForm.invalid">Commencer</button>
       </form>
     </div>
   </div>

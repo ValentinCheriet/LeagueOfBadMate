@@ -13,11 +13,13 @@ import { FindPlayersComponent } from './find-players/find-players.component';
 import {RouterModule, Routes} from '@angular/router';
 import {AuthService} from './services/auth.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: 'home', component: ViewComponent},
   {path: 'auth/signin', component: SignInComponent, data: { animation: 'isRight' }},
   {path: 'auth/signup', component: SignUpComponent, data: { animation: 'isLeft' }},
+  {path: 'myProfile', component: MyProfileComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', redirectTo: 'home'}
 ];
@@ -38,6 +40,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     AppRoutingModule
   ],
