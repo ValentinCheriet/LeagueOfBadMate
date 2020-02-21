@@ -25,6 +25,7 @@ const appRoutes: Routes = [
   {path: 'deniedAccess', component: DeniedAccessComponent},
   {path: 'fourOhFour', component: FourOhFourComponent},
   {path: 'myProfile', canActivate: [AuthGuardService], component: MyProfileComponent},
+  {path: 'firstStep', canActivate: [AuthGuardService], component: FirstTimeComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', redirectTo: 'fourOhFour'}
 ];
