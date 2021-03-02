@@ -1,0 +1,10 @@
+.generalBackground {
+    position: absolute;
+    margin: auto;
+    height: 90vh;
+    width: 100%;
+    z-index: -1;
+    background: url("https://images2.alphacoders.com/103/1032634.jpg");
+    background-size: cover;
+    filter: brightness(55%);
+}

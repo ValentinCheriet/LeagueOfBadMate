@@ -26,15 +26,17 @@ export class SignUpComponent implements OnInit {
   initForm() {
     this.signUpForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]]
+      password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]],
+      username: ['', [Validators.required, Validators.minLength(3)]],
     });
   }
 
   onSubmit() {
     const email = this.signUpForm.get('email').value;
     const password = this.signUpForm.get('password').value;
+    const username = this.signUpForm.get('username').value;
 
-    this.authService.createNewUser(email, password).then(
+    this.authService.createNewUser(email, password, username).then(
       () => {
         this.successMsg = 'Votre Compte à bien été créer !';
         this.errorMsg = '';
@@ -46,6 +48,7 @@ export class SignUpComponent implements OnInit {
           this.errorMsg = "Un compte existe déjà avec cette adresse";
         }
       }
-      );
+    );
+    this.authService.addNewUserAvailable(username);
   }
 }

@@ -1,5 +1,5 @@
 <app-header *ngIf="this.authService.isOnHero"></app-header>
-
-<main [@routeAnimations]="prepareRoute(outlet)" class="content">
+<div class="generalBackground"></div>
+<main [@routeAnimations]="prepareRoute(outlet)" class="content mainBackground">
   <router-outlet #outlet="outlet"></router-outlet>
 </main>

@@ -11,7 +11,7 @@ export class AuthService {
 
   constructor() { }
 
-  createNewUser(email: string, password: string) {
+  createNewUser(email: string, password: string, username: string) {
     return new Promise((resolve, reject) => {
         firebase.auth().createUserWithEmailAndPassword(email, password).then(
           () => {
@@ -23,6 +23,10 @@ export class AuthService {
         );
       }
     );
+  }
+
+  addNewUserAvailable(username: string) {
+    
   }
 
   signInUser(email: string, password: string) {

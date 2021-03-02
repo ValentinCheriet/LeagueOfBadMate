@@ -1,11 +1,15 @@
+* {
+  font-family: lobmHeaderFont;
+}
 nav {
   height: 70px;
   font-size: 20px;
   margin-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.082);
 }
 
 a {
-  color: white;
+  color: rgba(255, 255, 255, 0.747);
   transition: all 0.20s ease-in;
 }
 

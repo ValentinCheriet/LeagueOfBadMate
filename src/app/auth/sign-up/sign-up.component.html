@@ -5,12 +5,17 @@
         <h1>Crée ton Profil !</h1>
         <div class="form-group">
           <label for="email">Identifiant</label>
-          <input type="text" class="form-control" id="email" formControlName="email" autocomplete="off">
+          <input type="text" class="form-control" placeholder="Adresse e-mail valide" id="email" formControlName="email" autocomplete="off">
         </div>
 
         <div class="form-group">
           <label for="password">Mot de Passe</label>
-          <input type="password" class="form-control" placeholder="6 caractères minim." id="password" formControlName="password">
+          <input type="password" class="form-control" placeholder="6 caractères minim. Chiffre obligatoire" id="password" formControlName="password">
+        </div>
+
+        <div class="form-group">
+          <label for="username">Pseudo</label>
+          <input type="text" class="form-control" placeholder="Nom d'Invocateur" id="username" formControlName="username">
         </div>
         <p *ngIf="errorMsg != ''" class="text-danger">{{this.errorMsg}}</p>
         <p *ngIf="successMsg != ''" style="color: #ecc572;">{{this.successMsg}}</p>
