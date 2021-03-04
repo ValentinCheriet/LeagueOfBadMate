@@ -16,6 +16,7 @@ export class AuthService {
         firebase.auth().createUserWithEmailAndPassword(email, password).then(
           () => {
             resolve();
+            firebase.auth().signOut();
           },
           (error) => {
             reject(error);
@@ -23,10 +24,6 @@ export class AuthService {
         );
       }
     );
-  }
-
-  addNewUserAvailable(username: string) {
-    
   }
 
   signInUser(email: string, password: string) {

@@ -17,6 +17,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthGuardService} from './services/authGuard.service';
 import { DeniedAccessComponent } from './denied-access/denied-access.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+import { PlayerListComponent } from './player-list/player-list.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: ViewComponent},
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
   {path: 'fourOhFour', component: FourOhFourComponent},
   {path: 'myProfile', canActivate: [AuthGuardService], component: MyProfileComponent},
   {path: 'firstStep', canActivate: [AuthGuardService], component: FirstTimeComponent},
+  {path: 'playerList', canActivate: [AuthGuardService], component: PlayerListComponent, data: { animation: 'isLeft' }},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', redirectTo: 'fourOhFour'}
 ];
@@ -43,7 +45,8 @@ const appRoutes: Routes = [
     FirstTimeComponent,
     FindPlayersComponent,
     DeniedAccessComponent,
-    FourOhFourComponent
+    FourOhFourComponent,
+    PlayerListComponent
   ],
   imports: [
     BrowserModule,

@@ -49,6 +49,5 @@ export class SignUpComponent implements OnInit {
         }
       }
     );
-    this.authService.addNewUserAvailable(username);
   }
 }
